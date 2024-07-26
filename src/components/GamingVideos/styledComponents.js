@@ -23,7 +23,7 @@ export const GamingTitleIconContainer = styled.div`
   margin-right: 10px;
   display: flex;
   justify-content: center;
-  align-item: center;
+  align-items: center;
   @media screen and (min-width: 768px) {
     margin-left: 40px;
   }
@@ -34,7 +34,7 @@ export const GamingText = styled.h1`
   font-size: 25px;
   color: ${props => props.color};
   @media screen and (min-width: 768px) {
-    margin-left: 40px;
+    font-size: 35px;
   }
 `
 export const GamingVideoList = styled.ul`
