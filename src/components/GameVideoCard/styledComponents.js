@@ -6,7 +6,8 @@ export const ItemLink = styled(Link)`
 `
 export const GamingListItem = styled.li`
   background: none;
-  display: 100%;
+  width: 100%;
+  display: flex;
   flex-direction: column;
   @media screen and (min-width: 768px) {
     width: 280px;
@@ -14,10 +15,10 @@ export const GamingListItem = styled.li`
   }
 `
 export const GamingThumbNailImage = styled.img`
-  width: 100vh;
+  width: 100vw;
   height: 300px;
   align-self: center;
-  @media screen and (min-width: 767px) {
+  @media screen and (min-width: 768px) {
     width: 280px;
   }
 `
