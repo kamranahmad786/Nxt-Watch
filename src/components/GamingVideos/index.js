@@ -20,16 +20,16 @@ import {
 } from './styledComponents'
 
 const apiStatusConstants = {
-  initail: 'INITIAL',
+  initial: 'INITIAL',
   success: 'SUCCESS',
-  failuer: 'FAILURE',
-  inProgress: 'IM_PROGRESS',
+  failure: 'FAILURE',
+  inProgress: 'IN_PROGRESS',
 }
 
 class GamingVideos extends Component {
   state = {
     gamingVideos: [],
-    apiStatus: apiStatusConstants.initail,
+    apiStatus: apiStatusConstants.initial,
   }
 
   componentDidMount() {
@@ -60,7 +60,7 @@ class GamingVideos extends Component {
         apiStatus: apiStatusConstants.success,
       })
     } else {
-      this.setState({apiStatus: apiStatusConstants.failuer})
+      this.setState({apiStatus: apiStatusConstants.failure})
     }
   }
 
@@ -70,7 +70,7 @@ class GamingVideos extends Component {
     </LoaderContainer>
   )
 
-  rendreVideosView = () => {
+  renderVideosView = () => {
     const {gamingVideos} = this.state
     return (
       <GamingVideoList>
@@ -87,13 +87,13 @@ class GamingVideos extends Component {
 
   renderFailureView = () => <FailureView onRetry={this.onRetry} />
 
-  rendreTrendingVideos = () => {
+  renderTrendingVideos = () => {
     const {apiStatus} = this.state
 
     switch (apiStatus) {
       case apiStatusConstants.success:
-        return this.rendreVideosView()
-      case apiStatusConstants.failuer:
+        return this.renderVideosView()
+      case apiStatusConstants.failure:
         return this.renderFailureView()
       case apiStatusConstants.inProgress:
         return this.renderLoadingView()
@@ -122,7 +122,7 @@ class GamingVideos extends Component {
                   </GamingTitleIconContainer>
                   <GamingText color={textColor}>Gaming</GamingText>
                 </GamingVideoTitle>
-                {this.rendreTrendingVideos()}
+                {this.renderTrendingVideos()}
               </GamingContainer>
             </div>
           )
