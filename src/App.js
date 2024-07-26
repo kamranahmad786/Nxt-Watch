@@ -32,9 +32,7 @@ class App extends Component {
 
   addVideo = video => {
     const {savedVideos} = this.state
-    const index = savedVideos.findIndex(
-      eachVideos => eachVideos.id === video.id,
-    )
+    const index = savedVideos.findIndex(eachVideo => eachVideo.id === video.id)
     if (index === -1) {
       this.setState({savedVideos: [...savedVideos, video]})
     } else {
@@ -46,7 +44,7 @@ class App extends Component {
   removeVideo = id => {
     const {savedVideos} = this.state
     const updatedSavedVideos = savedVideos.filter(
-      eachVideos => eachVideos.id !== id,
+      eachVideo => eachVideo.id !== id,
     )
     this.setState({savedVideos: updatedSavedVideos})
   }
